@@ -1,0 +1,122 @@
+\graphicspath{{chapters/images/03/}}
+
+\chapter{third week}
+\section{Principal Component Analysis}
+Data from a big table, Starting point is a p x n matrix with p=genes and n=samples. The number of samples has to be between 40 to 100, if smaller than 20 analysis become difficult. If bigger, it is possible to use a subset of the dataset. p is normally larger than n, as of course genes are more. Source of errors are introduced, making noise. Generally a lot of non informative data, or even wrong, most often it is necessary to transform the data and normalize it. 
+
+Formulate a question and try to answer to that, about the aim, which genes are differentially expressed between different groups. Is it possible to group samples with similar expression profile?. Think about the statistical test then, 
+
+For \textbf{class comparison}, it is possible to use a t-test, what are the genes whose expression is different between different groups. Statisticall significance has to be detected. T-test to understand if H_0 is true or not...
+Calculate the T_{observed}. The T-value is student distributed. Difference obtained by chance or not? 
+
+Estimates of mean and standard deviation, very different values in different experiments. Especially if number of samples is low. Larger number of samples make the estimates more robust. The multiplicity problem has to be considered 
+
+For a given gene and a given type I error rate (a=5%), we know that this gene has a
+5% probability to be a false positive. Thus, when doing one test at a=5% for each
+gene, we know that the number of false positives will be 5% times the number of
+tests (5 FP for 100 tests, 50 FP for 1000 tests,…, 2200 FP for 44000 tests).
+
+The adjustment is made to have a new \textit{p}-value.
+
+
+
+Rank the genes based on the \textit{p}-value, those with the lowest \textit{p}-value are those more interesting. take for example the first thirty, draw a heat-map, where column is a sample and row is a gene. The t-test makes assumption on data, it is not the best oprion for class comparison. You have to set a threshold, and establish which are interesting and which not. The choice of threshold is always arbitrary. 
+
+It has to be started the analysis. Open the file, read the data, maybe to many $ 0s $. It is done a data normalization and a PCA, a way to reduce dimensionality of the dataset. 
+
+\subsection{Normalization}
+Ranges of values are presented through box-plots. The middel line is the median. Points out of whiskers are outliers. Whiskers represent 1.5 times the interquartile range %TODO .
+The range of values are really disalligned, for no reason, variation in the data that has no biological explanation. Reallign the boxes through normalization.
+
+The variation can be systematic, same for all the samples, or it can be random. The best way to deal with radom is to do several replicates. Random variations have a 0 mean. 
+
+The sources of variation :
+
+Dye bias: differences in heat and light sensitivity, efficiency of
+dye incorporation
+Differences in the amount of labeled cDNA hybridized to each
+channel in a microarray experiment (here channel is used to
+refer to a particular slide/dye combination.)
+Variation across replicate slides
+Variation across hybridization conditions
+Variation in scanning conditions
+Variation among technicians doing the lab work
+etc.
+
+The general strategy for normalization is to use
+House keeping genes,
+considered not to change on average across samples and
+conditions. Remove residual variation of house keeping genes taking a pool of these genes.
+
+The simplest method: subtract the median from each values of the profile \Rightarrow all the samples are alligned on  $ 0 $. Shifting up and down the boxes. 
+
+Variants of normalization: batch effect: source of error is known, for example different processing (very unlikely the same results), some packages are available; microarray done in different days.
+
+Once done the alignment, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data analysis is a complex multi step process. Formulate the question.
+
+\section{T-test}
+T-test returns a \textit{p}-value,  ... %TODO (aggiungi le note)
+
+The T-test produces more reliable results with normal distributed data.
+
+The t-test suffer of the multiplicity problem. A solution is touse a correction method, like Bonferroni. The problem of threshold is not already solved, normally 0.05\%. The percentage remains arbitrary. 0.05 means that you have a mistake as result only for the 5\% of the times. 
+The ones with smaller \textit{p}-value are the most interesting. It is possible to sort the genes and take those with lower values of \textit{p}-value.
+
+
+\begin{itemize}
+	\item Check data in there 
+	\item Not too many NAs
+	\item Inspect
+	\item Normalization: The sistematic source of variation can be eliminated by using a box-plot, which means great amount of variation. normalization is made by subtracting the median.
+Align the size of the boxed by aligning the standard deviation
+\end{itemize}
+
+
+\section{Data transformation}
+It has not to be performed without a valid reason
+The simplest is the log transformation.
+Rank transformation 
+
+The z-score is also a transformation, 
+
+\section{PCA} %TODO
+The result of PCA is normally a 2-dimensional plot, PCA is used in a number of fields. X coordinates to y coordinates. 
+For the second direction it has to be selected  a component which is perpendicular. When a cloud. Once identified the set of coefficients.
+
+Each eigenvector fills a row of the matrix. The eigenvalues provide an estmate of the percentage of the variability which 
+
+hOW MANY COMPONENTS TO USE
+the first few components have to be used. 
+
+Y are new coordinates, 
+
+
+
+
+
+
+
+
+Covariance matrix vs correlation matrix: 
+
+
+
