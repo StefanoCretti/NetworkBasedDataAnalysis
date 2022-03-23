@@ -1,0 +1,71 @@
+analysis:
+classification: find a way to assign a label to each sample of a dataset. can provide a list of genes to perform classification. 
+
+The classification problem was solved in different ways tries. None of the methods works best for every possible dataset. depends on the nature of the data. select the best performing one. \\
+
+Many of the methods depend on machine learning: learn from data. Statistical tools can be used combined with machine learning. search engines, natural language processing. Medical diagnosis.\\
+
+supervised against unsupervised learning. learning extract features using a small dataset. the algorithm can so be used to other samples. Unsupervised methods are instead used without ... %TODO\\
+
+
+\section{Unsupervised learning}
+
+data clustering, is used also as a synonym to unsupervised learning. TWo methods we will see.
+it consists in understanding how info points could be clustered. Clustering among almost every field. \\
+Main aspects:
+\begin{itemize}
+	\item \textbf{Distance function}: a way to measure similarity or dissimilarity
+	\item \textbf{Clustering quality}: it has to be maximized. Intra-clusters distance could also be done.
+	...
+\end{itemize}
+
+clustering algorithms could be partitional or hierarchical. 
+
+
+\subsection{K-means clustering} 
+it is a partitional clustering, using a distance function, it minimizes the intra-cluster distance. K is the expected number of clusters, and it has to be given to the algorithm. sometimes the number of clusters cannot be said certainly. Leads to the user the decision about the number of clusters.
+Takes K seeds, which arethe initial centroids, cluster centers. Assign each node to the closest centroid. Recompute the centroids and another time it is done the process.
+A reasonable criteria to stop the algorithm: no reassignment of data points to different clusters, minimum change of the centroids, minimum decrease in the SSE: when this distance goes under a threshold, the algorithm stops. 
+
+\begin{equation}
+\sum_{j=1}^k\sum_{x\in
+\end{equation}
+
+The ingredient is the distance function, the Euclidean distance in particular, application of the Pitagoran theorem.
+
+\begin{equation}
+
+\end{equation}
+
+You can think about other possible methods\\\\
+
+\begin{itemize}
+\item \textbf{Strengths}: very intuitive, the complexity is ..., it is a linearly complex algorithm, it is the most popular clustering algorithm.\\
+	\item \textbf{Weaknesses}: you have to know k, outliers affect the decision of the algorithm. Solution: reduce the dataset excluding the outlier. Run the algorithm different times on subsets of the dataset. It is also sensitive to the initial seed, solution: aggregate results of multiple runs. It can be used in case of simple structures, round, for difficult shapes, the algorithm doesn't work well.
+\end{itemize}
+	
+\subsection{Outliers}
+It is difficult to find a rule to identify them, it is subjective, you decide where to cut.  Interquartile range, multiply per 1.5. The 1.5 parameter can be modified, it is arbitrary, it's controversial the number usage, more robust to outliers or not. 
+
+\subsection{Hierarchical clustering} 
+it is another clustering method based on a distance matrix. It is based on a dendogram, a tree. A way of clustering raws and columns of a matrix. It can be constructed top-bottom or bottom-up. \\
+
+The divisive clustering abd agglomerate clustering are possible.\\
+
+each point generates a node of the tree, a cluster. merge 2 clusters at every level, 
+
+for each node you have to compute distance with all the other nodes. The final step is to obtain the total cluster (4 in figure \ref{}). The result is the dendogram.\\
+
+\textbf{Where are the final clusters?} depends on the level of the "cut", imagine drawing an horizontal line on the dendogram graph. \\
+
+How to measure distance between two sets of points. 
+Single link method: the distance between two clusters is the distance between two closest data points. 
+Complete link method: the distance between the furthest points
+Average link: a compromise
+Centroid method the distance between two clusters in hte distance between their centroids. 
+
+distance matrix needed. Due to complexity, it is hard to use for large datasets.\\
+
+h larger than two puts more enphasys.  
+
+
