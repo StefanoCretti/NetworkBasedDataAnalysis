@@ -6,7 +6,7 @@ To get the notes simply download the .pdf file.
 # Lectures
 * Polished: first week
 * To polish: second week, third week, fourth week
-* To do: \\
+* To do: //
 
 # Labs 
 Still to decide how to treat/include the lab lectures
