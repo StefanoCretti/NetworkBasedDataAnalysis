@@ -1,34 +1,39 @@
 \input{prefix}  % Place all packages in the prefix file
 
 % Set up document info
-\title{\Huge\textbf{courseName}}
+\title{\Huge\textbf{Network Based Data Analysis - Lauria}}
 \author{
   authorName \\
   \small telegram: \href{telegramLink}{@authorName} \\[3pt]
 \small Github: \href{mainRepoLink}{mainRepoLink}}
+
 
 % File structure to expand
 % Files should be named #section #chapter chapterName
 \begin{document}
 \maketitle
 \tableofcontents
-
-  % Add introduction if needed
-  % Parts may not be needed, chapters could be enough
   
-  \part{nameOfPart01}
+  \part{Introduction to omics}
 
-    \input{chapters/01introduction}
+    \input{chapters/01introToOmics}
+    \input{chapters/02secondweek}
 
-  \part{nameOfPart02}
+  \part{Introduction to PCA}
 
-    \input{chapters/0201chapterName}
-  % Add appendix if needed
-  
- 
-\bibliographystyle{apacite}
-\bibliography{bibliography}
-  
+    \input{chapters/03thirdweek}
 
+  \part{Machine learning}
+    \input{chapters/04fourthweek}
+
+  \part{Introduction to LDA}
+
+  \part{Lasso/Ridge regression}
+
+  \part{Rank-based signatures}
+
+  \part{Functional enrichment analysis}
+
+  \part{Network analysis}
 
 \end{document}

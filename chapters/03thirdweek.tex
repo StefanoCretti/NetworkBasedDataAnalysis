@@ -9,17 +9,17 @@ Data from a big table, Starting point is a $ p x n $ matrix with \textit{p} is e
 
 Formulate a question and try to answer to that, about the aim, which genes are differentially expressed between different groups. Is it possible to group samples with similar expression profile?. Think about the statistical test then. Once done the question, open data file, data normalization, transformation and PCA. Questions through the description of the experiment. 
 
-For \textbf{class comparison}, it is possible to use a \textbf{t-test}, what are the genes whose expression is different between different groups. Statisticall significance has to be detected. T-test to understand if H_0 is true or the alternative hypothesys is True. The test gives a \textit{p}-value.
-Calculate the T_{observed}. Difference obtained by chance or not? Are the data extracted from the same distribution (in this case mean of the two groups should be similar)? 
+For \textbf{class comparison}, it is possible to use a \textbf{t-test}, what are the genes whose expression is different between different groups. Statisticall significance has to be detected. T-test to understand if $H_0$ is true or the alternative hypothesys is True. The test gives a \textit{p}-value.
+Calculate the $T_{observed}$. Difference obtained by chance or not? Are the data extracted from the same distribution (in this case mean of the two groups should be similar)? 
 A solution is to use a correction method, like Bonferroni. The problem of \textbf{threshold} is not already solved, normally $0.05\%$. The percentage remains arbitrary. $0.05$ means that you have a mistake as result only for the 5\% of the times. 
 The ones with smaller \textit{p}-value are the most interesting. It is possible to sort the genes and take those with lower values of \textit{p}-value.
 
 Estimates of mean and standard deviation, very different values in different experiments. Especially if number of samples is low. Larger number of samples make the estimates more robust.
 
 The \textbf{multiplicity problem} has to be considered.
-For a given gene and a given type I error rate ($ \alpha=5% $), we know that this gene has a
-5\% probability to be a false positive. Thus, when doing one test at $ \alpha=5% $ for each
-gene, we know that the number of false positives will be 5% times the number of
+For a given gene and a given type I error rate ($ \alpha=5\% $), we know that this gene has a
+5\% probability to be a false positive. Thus, when doing one test at $\alpha=5\%$  for each
+gene, we know that the number of false positives will be 5\% times the number of
 tests (5 FP for 100 tests, 50 FP for 1000 tests,…, 2200 FP for 44000 tests).
 The T-test produces more reliable results with normal distributed data.
 
@@ -54,7 +54,7 @@ House keeping genes,
 considered not to change on average across samples and
 conditions. Remove residual variation of house keeping genes taking a pool of these genes.
 
-The simplest method: subtract the median from each values of the profile \Rightarrow all the samples are alligned on  $ 0 $, through the shifting up and down of the boxes. 
+The simplest method: subtract the median from each values of the profile $\Rightarrow$ all the samples are alligned on  $0$, through the shifting up and down of the boxes. 
 
 Variants of normalization: batch effect: source of error is known, for example different processing (very unlikely the same results), some packages are available; microarray done in different days.
 
