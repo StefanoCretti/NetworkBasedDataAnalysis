@@ -4,20 +4,13 @@
 \chapter{High-throughput biological data}
   High-throughput techniques, ofter referred to as \textbf{omic techniques}, are a way to collect extensive, comprehensive, quantitative and large scale data on a certain aspect of a biological system. The main omics data types are genomics, transcriptomics, proteomics, metabolomics; each of them possesses specific individual technologies and methods. 
 
-  \section{Required biological background}
-    It is assumed that you posses some amount of knowledge regarding the following topics:
-    \begin{itemize}
-      \item Molecular biology of the cell (cell types and characteristics)
-      \item Molecular components of the cell (mainly proteins and nucleic acids)
-    \end{itemize}
-
   \section{Genomics}
     \textbf{Genomics} refers to the study of the genome, which is the entire DNA (or RNA in some bacteria and viruses) content of a cell. The focus is generally on the variation of the genome of an individual (or a group of individuals) compared to a reference genome (a sequence that is shared by most individuals of a scpecies). Particularly important is the study of \textbf{SNPs} (Single Nucleotide Polymorphisms) which allows to retrieve information such as philogenetics, disease predisposition, forensic applications (individual recognition, paternity testing...) and many others. SNPs can be studied either via \textbf{DNA microarrays}, which are economic since they target only specific regions of the genome where the presence of SNPs is known, or via \textbf{whole genome sequencing}, which is more expensive but gives information. 
     
     \subsection{Genomic wide association studies}
       \textbf{Genome Wide Association Studies} (GWAS) are studies where many genetic markers are studied across the genome a population in orded to try and correlate them to specific conditions (mainly predisposition and presence of disease).
 
-      \begin{figure}[h]
+      \begin{figure}[ht]
       \caption{Manhattan plot: Mahnattan plots are a common way to represent GWAS results}
       \centering
       \includegraphics[width=0.6\textwidth]{ManhattanPlot.jpg}
@@ -46,7 +39,7 @@
         \item Analyze the output
       \end{itemize}
 
-      \begin{figure}[h]
+      \begin{figure}[ht]
       \caption{Microarray output: Genes with different expressions can be visualized, each column is a sample and each row is one of the 25 genes. The colour represents the level of expression}
       \centering
       \includegraphics[width=0.6\textwidth]{MicroRNAresults.PNG}
@@ -55,7 +48,7 @@
     \subsection{Next generation sequencing}
       \textbf{Next generation sequencing} (NGS) is another way to analyize the transcriptome; each mRNA species in each sample is broken into fragments, and all fragments are sequenced base by base. The current technologies manage to sequence small pieces of RNA, around 250 bases. By using overlapping ends of the fragments, we can reassamble RNAs. A higher amount of fragments grants an higher coverage. This method allows \textbf{massively parallel sequencing}, \textbf{sequencing of both known and unknown transcipt} (no probe requirement), detecting transcripts in a \textbf{high dynamic range} (up to $10^6$ copies)
 
-      \begin{figure}[h]
+      \begin{figure}[ht]
       \caption{NGS flowchart}
       \centering
       \includegraphics[width=0.6\textwidth]{TranscriptomicsNextGenSeq.PNG}
@@ -64,7 +57,7 @@
     \subsection{RNA-seq pipeline}
       After obtaining the raw sequencing results, the RNA-seq pipeline uses some other resources, namely input files (reference genome, gene annotation) and programmes (some accessed through cloud to speed up data analysis), to obtain polished information and results.
 
-      \begin{figure}[h]
+      \begin{figure}[ht]
       \caption{RNA-seq pipeline}
       \centering
       \includegraphics[width=0.6\textwidth]{RNAseqpipeline.PNG}
@@ -89,7 +82,7 @@
       \end{itemize}
       These maps can be then compared either with maps from other samples (to identify differences) or with databases to identify the proteins spots. Notice that this procedure does not technically identify univocally the protein and thus, if required, you might have to cut the protein spot from the gel and procede with further analysis. Another significant problem with this technique is the need for large amounts of samples to have significant signal levels.
 
-      \begin{figure}[h]
+      \begin{figure}[ht]
       \caption{Isoelectric focusing: separation of proteins in a pH gradient}
       \centering
       \includegraphics[width=0.6\textwidth]{IsoelectricProteinSeparation}
@@ -102,7 +95,7 @@
       \textbf{Protein arrays} are conceptually similar to DNA arrays, but instead of DNA probes they use \textbf{aptamers}, which are oligonucleotides or peptide molecules designed to uniquely bind to a specific molecule. Proteins bind the aptamers and a fluorescent signal is used for detection. This method is easy and cheap, but it measures a low amount of proteins and only proteins for which an aptamer was found. It is still an emergent technology.
       % \cite{neaguProteinMicroarrayTechnology2019}.
 
-      \begin{figure}[h]
+      \begin{figure}[ht]
       \caption{Protein array}
       \centering
       \includegraphics[width=0.6\textwidth]{ProteinArray}
@@ -131,7 +124,7 @@
       \textbf{Epigenetics} is the study of heritable changes in gene activity that are not caused by changes in the DNA sequence. Some mechanisms that produce such changes are \textbf{DNA methylation} and \textbf{histone modification}. Both mechanisms alter how genes are expressed without altering the underlying DNA sequence.
       %TODO potentially add more
 
-      \begin{figure}[h]
+      \begin{figure}[ht]
       \caption{Examples of epigenetic modifications}
       \centering
       \includegraphics[width=0.6\textwidth]{EuEteroChromatin}
@@ -144,10 +137,3 @@
     \subsection{Interactome}
       The \textbf{interactome} of a protein is the set of molecules (generally other proteins) that interact with that specific protein (therefore we usually talk about protein-protein interaction). Studying the interactome of a protein can help understand its function and possible ways to modulate its activity. There are databases for interactomes. Interactomes are generally shown in 3D graphs, with nodes representing proteins and lines representing connections between them.  
       %TODO potentially add more
-
-\chapter{Clinical trial study design}
-  
-  \section{Required background}
-    Some basic knowledge regarding cell lines, immortalized cell lines, model organisms, human studies and their pros and cons are required. \textit{This section might be expanded more clearly in the future}.
-
-    %TODO Decide if actually expanding it or not

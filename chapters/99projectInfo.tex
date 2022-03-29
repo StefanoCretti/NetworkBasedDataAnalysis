@@ -1,0 +1,18 @@
+\chapter*{Project guidelines [still WIP]}
+\addcontentsline{toc}{chapter}{Project guidlines}
+  
+  \section*{Choosing a dataset}
+    Choose either microarray (GEO, ArrayExpress) or RNA-Seq (GEO, recount3) data. Dataset must have a limited number of groups (maximum 3-4) and at least 20 samples per group; if the dataset has a huge number of observations you can subset them. The dataset must allow to formulate an interesting biological question; answering this question becomes the objective of the project.
+
+    Raw counts are the starting point for RNA-Seq. On GEO you download the series file for the dataset of interest; it will always contain the metadata (inspect it in Excel since it is a .tsv), while the raw counts may not be there. This can be seen by the file dimension: if the size is in Kb the counts are probably not there, if it is in Mb the are probably included. If the data in included you can download it using the R GEO library.
+
+    In case it is not included, you have to open the SRA (a raw data database) link at the bottom of the GEO page and look for the SRA study identifier; copy the identifier and paste it in recount3. If the dataset is found on recount3 it means that you can download the raw counts from there (using R recount3 library), otherwise you should choose another dataset. 
+
+    Raw counts are the starting point for microarray data too, but usually you do not have gene names but rather probe IDs; you have to convert the probe IDs to gene names (generally using some package in R specific for the array used for the experiment).
+
+    If working with miRNAs, to perform functional enrichment analysis you will have to pass from miRNAs to their target genes. 
+
+  \section*{Preliminary analysis and normalization}
+    First create a boxplot of your data to inspect it (one box is a sample). Ideally you want boxplots with same median and spread, therefore a first normalization step could be to substract the median value to each sample (all sample then would have median equal to zero) and then divide sample values by their standard deviation (all samples then would have standard deviation equal to one). This step is performed because it is assumed that the large majority of genes are not changing from a sample to another.
+    Another step that might be required is logarithmic transformation.
+    Depending on the normalization needed, you use different R packages.
