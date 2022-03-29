@@ -4,8 +4,8 @@ If you want to contribute to the project fork the repository and create a push r
 To get the notes simply download the .pdf file.
 
 # Lectures
-* Polished: first week
-* To polish: second week, third week, fourth week
+* Polished: first week, second week
+* To polish: third week, fourth week
 * To do: //
 
 # Labs 
